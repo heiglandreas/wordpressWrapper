@@ -14,6 +14,10 @@ provide you with autocompletion.
 Download the WordPress-Class for your WordPress-version and include it in
 your project.
 
+## Download
+
+[WordPress-4.9.6](dist/4.9.6/WordPress.php)
+
 ## Usage
 
 Create a new instance of the WordPress-class and invoke the methods you need like this:
@@ -82,9 +86,7 @@ class MyClassTest extends \PHPUnit\Framework\TestCase
 }
 ```
 
-## Download
 
-[WordPress-4.9.6](dist/4.9.6/WordPress.php)
 
 
 
