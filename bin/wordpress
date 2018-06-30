@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * Copyright (c) Andreas Heigl
+ * 
+ * Licensed under the MIT License. See LICENSE.md file in the project root
+ * for full license information.
+ */
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Org_Heigl\FileFinder\FileFinder;
+use Org_Heigl\WordpressWrapper\Command\ParseWordpressCore;
+use Org_Heigl\WordpressWrapper\Service\CreateWrapperFile;
+use Org_Heigl\WordpressWrapper\Service\DownloadWordPressVersion;
+use Org_Heigl\WordpressWrapper\Service\ExtractZipFileToFolder;
+use Org_Heigl\WordpressWrapper\Service\FindFunctionsInFileList;
+use Org_Heigl\WordpressWrapper\Service\FindPhpFilesInExtractedCode;
+use Org_Heigl\WordpressWrapper\Service\ParseWordpress;
+use Symfony\Component\Console\Application;
+
+$application = new Application('wordpressWrapper', '1.0');
+
+$application->add(new ParseWordpressCore(new ParseWordpress(
+        new DownloadWordPressVersion(),
+        new ExtractZipFileToFolder(),
+        new FindPhpFilesInExtractedCode(new FileFinder()),
+        new FindFunctionsInFileList(),
+        new CreateWrapperFile(getcwd() . DIRECTORY_SEPARATOR . 'WordPress.php')
+)));
+$application->setDefaultCommand('parse', true);
+
+$application->run();

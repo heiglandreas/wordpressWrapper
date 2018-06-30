@@ -1,0 +1,32 @@
+{
+    "name": "org_heigl/wordpresswrapper",
+    "description": "Wrap wordpress-functions into a class",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Heigl",
+            "email": "andreas@heigl.org"
+        }
+    ],
+    "require": {
+        "ext-zip" : "*",
+        "symfony/console": "^4.1",
+        "roave/better-reflection": "^3.0",
+        "org_heigl/filefinder": "^1.4",
+        "org_heigl/trait-iterator": "^1.1"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Org_Heigl\\WordpressWrapper\\" : "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "Org_Heigl\\WordpressWrapperTest\\" : "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    }
+}
