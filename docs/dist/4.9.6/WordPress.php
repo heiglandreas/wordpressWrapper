@@ -4,6 +4,8 @@
  * Autocreated via wordpress-Wrapper
  */
 
+namespace Org_Heigl\WordPressWrapper;
+
 /**
 * @method int absint (mixed $maybeint) https://developer.wordpress.org/reference/functions/absint
 * @method \WP_Error|null activate_plugin (string $plugin, string $redirect = '', bool $network_wide = false, bool $silent = false) https://developer.wordpress.org/reference/functions/activate_plugin
