@@ -34,6 +34,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool|string add_media_page (string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '') https://developer.wordpress.org/reference/functions/add_media_page
 * @method array add_menu_classes (array $menu) https://developer.wordpress.org/reference/functions/add_menu_classes
 * @method string add_menu_page (string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = NULL) https://developer.wordpress.org/reference/functions/add_menu_page
+* @method int|bool add_meta (int $post_ID) https://developer.wordpress.org/reference/functions/add_meta
 * @method void add_metadata ($meta_type, $object_id, $meta_key, $meta_value, $unique = false) https://developer.wordpress.org/reference/functions/add_metadata
 * @method void add_meta_box (string $id, string $title, callable $callback, string|array|\WP_Screen $screen = NULL, string $context = 'advanced', string $priority = 'default', array $callback_args = NULL) https://developer.wordpress.org/reference/functions/add_meta_box
 * @method bool add_network_option (int $network_id, string $option, mixed $value) https://developer.wordpress.org/reference/functions/add_network_option
@@ -45,8 +46,11 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array add_option_whitelist (array $new_options, string|array $options = '') https://developer.wordpress.org/reference/functions/add_option_whitelist
 * @method bool|string add_pages_page (string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '') https://developer.wordpress.org/reference/functions/add_pages_page
 * @method void add_permastruct (string $name, string $struct, array $args = []) https://developer.wordpress.org/reference/functions/add_permastruct
+* @method int|bool add_ping (int|\WP_Post $post_id, string|array $uri) https://developer.wordpress.org/reference/functions/add_ping
 * @method bool|string add_plugins_page (string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '') https://developer.wordpress.org/reference/functions/add_plugins_page
 * @method bool|string add_posts_page (string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '') https://developer.wordpress.org/reference/functions/add_posts_page
+* @method int|bool add_post_meta (int $post_id, string $meta_key, mixed $meta_value, bool $unique = false) https://developer.wordpress.org/reference/functions/add_post_meta
+* @method void add_post_type_support (string $post_type, string|array $feature) https://developer.wordpress.org/reference/functions/add_post_type_support
 * @method string add_query_arg () https://developer.wordpress.org/reference/functions/add_query_arg
 * @method void add_rewrite_endpoint (string $name, int $places, string|bool $query_var = true) https://developer.wordpress.org/reference/functions/add_rewrite_endpoint
 * @method void add_rewrite_rule (string $regex, string|array $query, string $after = 'bottom') https://developer.wordpress.org/reference/functions/add_rewrite_rule
@@ -106,6 +110,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void body_class (string|array $class = '') https://developer.wordpress.org/reference/functions/body_class
 * @method bool bool_from_yn (string $yn) https://developer.wordpress.org/reference/functions/bool_from_yn
 * @method string build_query (array $data) https://developer.wordpress.org/reference/functions/build_query
+* @method array bulk_edit_posts (array $post_data = NULL) https://developer.wordpress.org/reference/functions/bulk_edit_posts
 * @method void cache_javascript_headers () https://developer.wordpress.org/reference/functions/cache_javascript_headers
 * @method void cache_users (array $user_ids) https://developer.wordpress.org/reference/functions/cache_users
 * @method float calendar_week_mod (int $num) https://developer.wordpress.org/reference/functions/calendar_week_mod
@@ -118,6 +123,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string checked (mixed $checked, mixed $current = true, bool $echo = true) https://developer.wordpress.org/reference/functions/checked
 * @method bool|int check_admin_referer (int|string $action = -1, string $query_arg = '_wpnonce') https://developer.wordpress.org/reference/functions/check_admin_referer
 * @method bool|int check_ajax_referer (int|string $action = -1, bool|string $query_arg = false, bool $die = true) https://developer.wordpress.org/reference/functions/check_ajax_referer
+* @method void check_and_publish_future_post (int|\WP_Post $post_id) https://developer.wordpress.org/reference/functions/check_and_publish_future_post
 * @method bool check_column (string $table_name, string $col_name, string $col_type, bool $is_null = NULL, mixed $key = NULL, mixed $default = NULL, mixed $extra = NULL) https://developer.wordpress.org/reference/functions/check_column
 * @method void check_comment ($author, $email, $url, $comment, $user_ip, $user_agent, $comment_type) https://developer.wordpress.org/reference/functions/check_comment
 * @method void check_comment_flood_db () https://developer.wordpress.org/reference/functions/check_comment_flood_db
@@ -127,6 +133,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array check_upload_mimes (array $mimes) https://developer.wordpress.org/reference/functions/check_upload_mimes
 * @method void check_upload_size ($file) https://developer.wordpress.org/reference/functions/check_upload_size
 * @method void choose_primary_blog () https://developer.wordpress.org/reference/functions/choose_primary_blog
+* @method void clean_attachment_cache (int $id, bool $clean_terms = false) https://developer.wordpress.org/reference/functions/clean_attachment_cache
 * @method void clean_blog_cache (\WP_Site|int $blog) https://developer.wordpress.org/reference/functions/clean_blog_cache
 * @method void clean_bookmark_cache (int $bookmark_id) https://developer.wordpress.org/reference/functions/clean_bookmark_cache
 * @method void clean_category_cache (int $id) https://developer.wordpress.org/reference/functions/clean_category_cache
@@ -134,6 +141,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void clean_network_cache (int|array $ids) https://developer.wordpress.org/reference/functions/clean_network_cache
 * @method void clean_object_term_cache (int|array $object_ids, array|string $object_type) https://developer.wordpress.org/reference/functions/clean_object_term_cache
 * @method void clean_page_cache (int $id) https://developer.wordpress.org/reference/functions/clean_page_cache
+* @method void clean_post_cache (int|\WP_Post $post) https://developer.wordpress.org/reference/functions/clean_post_cache
 * @method string clean_pre (array|string $matches) https://developer.wordpress.org/reference/functions/clean_pre
 * @method void clean_site_details_cache (int $site_id = 0) https://developer.wordpress.org/reference/functions/clean_site_details_cache
 * @method void clean_taxonomy_cache (string $taxonomy) https://developer.wordpress.org/reference/functions/clean_taxonomy_cache
@@ -193,6 +201,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array count_users (string $strategy = 'time', int|null $site_id = NULL) https://developer.wordpress.org/reference/functions/count_users
 * @method string count_user_posts (int $userid, array|string $post_type = 'post', bool $public_only = false) https://developer.wordpress.org/reference/functions/count_user_posts
 * @method string|int create_empty_blog (string $domain, string $path, string $weblog_title, int $site_id = 1) https://developer.wordpress.org/reference/functions/create_empty_blog
+* @method void create_initial_post_types () https://developer.wordpress.org/reference/functions/create_initial_post_types
 * @method void create_initial_rest_routes () https://developer.wordpress.org/reference/functions/create_initial_rest_routes
 * @method void create_initial_taxonomies () https://developer.wordpress.org/reference/functions/create_initial_taxonomies
 * @method int create_user (string $username, string $password, string $email) https://developer.wordpress.org/reference/functions/create_user
@@ -223,11 +232,15 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool delete_comment_meta (int $comment_id, string $meta_key, mixed $meta_value = '') https://developer.wordpress.org/reference/functions/delete_comment_meta
 * @method void delete_expired_transients (bool $force_db = false) https://developer.wordpress.org/reference/functions/delete_expired_transients
 * @method void delete_get_calendar_cache () https://developer.wordpress.org/reference/functions/delete_get_calendar_cache
+* @method bool delete_meta (int $mid) https://developer.wordpress.org/reference/functions/delete_meta
 * @method bool delete_metadata (string $meta_type, int $object_id, string $meta_key, mixed $meta_value = '', bool $delete_all = false) https://developer.wordpress.org/reference/functions/delete_metadata
 * @method bool delete_metadata_by_mid (string $meta_type, int $meta_id) https://developer.wordpress.org/reference/functions/delete_metadata_by_mid
 * @method bool delete_network_option (int $network_id, string $option) https://developer.wordpress.org/reference/functions/delete_network_option
 * @method bool delete_option (string $option) https://developer.wordpress.org/reference/functions/delete_option
 * @method bool|null|\WP_Error delete_plugins (array $plugins, string $deprecated = '') https://developer.wordpress.org/reference/functions/delete_plugins
+* @method bool delete_post_meta (int $post_id, string $meta_key, mixed $meta_value = '') https://developer.wordpress.org/reference/functions/delete_post_meta
+* @method bool delete_post_meta_by_key (string $post_meta_key) https://developer.wordpress.org/reference/functions/delete_post_meta_by_key
+* @method bool delete_post_thumbnail (int|\WP_Post $post) https://developer.wordpress.org/reference/functions/delete_post_thumbnail
 * @method bool delete_site_option (string $option) https://developer.wordpress.org/reference/functions/delete_site_option
 * @method bool delete_site_transient (string $transient) https://developer.wordpress.org/reference/functions/delete_site_transient
 * @method bool delete_term_meta (int $term_id, string $meta_key, mixed $meta_value = '') https://developer.wordpress.org/reference/functions/delete_term_meta
@@ -290,6 +303,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void edit_comment_link (string $text = NULL, string $before = '', string $after = '') https://developer.wordpress.org/reference/functions/edit_comment_link
 * @method void edit_form_image_editor (\WP_Post $post) https://developer.wordpress.org/reference/functions/edit_form_image_editor
 * @method int|\WP_Error edit_link (int $link_id = 0) https://developer.wordpress.org/reference/functions/edit_link
+* @method int edit_post (array $post_data = NULL) https://developer.wordpress.org/reference/functions/edit_post
 * @method void edit_post_link (string $text = NULL, string $before = '', string $after = '', int|\WP_Post $id = 0, string $class = 'post-edit-link') https://developer.wordpress.org/reference/functions/edit_post_link
 * @method void edit_tag_link (string $link = '', string $before = '', string $after = '', \WP_Term $tag = NULL) https://developer.wordpress.org/reference/functions/edit_tag_link
 * @method string|void edit_term_link (string $link = '', string $before = '', string $after = '', object $term = NULL, bool $echo = true) https://developer.wordpress.org/reference/functions/edit_term_link
@@ -363,12 +377,15 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array get_allowed_mime_types (int|\WP_User $user = NULL) https://developer.wordpress.org/reference/functions/get_allowed_mime_types
 * @method array get_allowed_themes () https://developer.wordpress.org/reference/functions/get_allowed_themes
 * @method object get_all_category_ids () https://developer.wordpress.org/reference/functions/get_all_category_ids
+* @method array get_all_page_ids () https://developer.wordpress.org/reference/functions/get_all_page_ids
+* @method array get_all_post_type_supports (string $post_type) https://developer.wordpress.org/reference/functions/get_all_post_type_supports
 * @method array get_all_user_settings () https://developer.wordpress.org/reference/functions/get_all_user_settings
 * @method array get_ancestors (int $object_id = 0, string $object_type = '', string $resource_type = '') https://developer.wordpress.org/reference/functions/get_ancestors
 * @method int|array get_approved_comments (int $post_id, array $args = []) https://developer.wordpress.org/reference/functions/get_approved_comments
 * @method string|null get_archives (string $type = '', string $limit = '', string $format = 'html', string $before = '', string $after = '', bool $show_post_count = false) https://developer.wordpress.org/reference/functions/get_archives
 * @method string get_archives_link (string $url, string $text, string $format = 'html', string $before = '', string $after = '') https://developer.wordpress.org/reference/functions/get_archives_link
 * @method void get_archive_template () https://developer.wordpress.org/reference/functions/get_archive_template
+* @method string|bool get_attached_file (int $attachment_id, bool $unfiltered = false) https://developer.wordpress.org/reference/functions/get_attached_file
 * @method array get_attached_media (string $type, int|\WP_Post $post = 0) https://developer.wordpress.org/reference/functions/get_attached_media
 * @method array get_attachment_fields_to_edit (\WP_Post $post, array $errors = NULL) https://developer.wordpress.org/reference/functions/get_attachment_fields_to_edit
 * @method bool|string get_attachment_icon (int $id = 0, bool $fullsize = false, array $max_dims = false) https://developer.wordpress.org/reference/functions/get_attachment_icon
@@ -386,6 +403,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array get_author_user_ids () https://developer.wordpress.org/reference/functions/get_author_user_ids
 * @method int get_autotoggle (int $id = 0) https://developer.wordpress.org/reference/functions/get_autotoggle
 * @method void get_available_languages ($dir = NULL) https://developer.wordpress.org/reference/functions/get_available_languages
+* @method mixed get_available_post_mime_types (string $type = 'attachment') https://developer.wordpress.org/reference/functions/get_available_post_mime_types
+* @method array get_available_post_statuses (string $type = 'post') https://developer.wordpress.org/reference/functions/get_available_post_statuses
 * @method bool|string get_avatar (mixed $id_or_email, int $size = 96, string $default = '', string $alt = '', array $args = NULL) https://developer.wordpress.org/reference/functions/get_avatar
 * @method array get_avatar_data (mixed $id_or_email, array $args = NULL) https://developer.wordpress.org/reference/functions/get_avatar_data
 * @method bool|string get_avatar_url (mixed $id_or_email, array $args = NULL) https://developer.wordpress.org/reference/functions/get_avatar_url
@@ -428,6 +447,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string get_catname (int $cat_ID) https://developer.wordpress.org/reference/functions/get_catname
 * @method int get_cat_ID (string $cat_name) https://developer.wordpress.org/reference/functions/get_cat_ID
 * @method string get_cat_name (int $cat_id) https://developer.wordpress.org/reference/functions/get_cat_name
+* @method array get_children (mixed $args = '', string $output = NULL) https://developer.wordpress.org/reference/functions/get_children
 * @method string get_clean_basedomain () https://developer.wordpress.org/reference/functions/get_clean_basedomain
 * @method mixed get_cli_args (string $param, bool $required = false) https://developer.wordpress.org/reference/functions/get_cli_args
 * @method void get_column_headers ($screen) https://developer.wordpress.org/reference/functions/get_column_headers
@@ -486,6 +506,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void get_default_feed () https://developer.wordpress.org/reference/functions/get_default_feed
 * @method \stdClass get_default_link_to_edit () https://developer.wordpress.org/reference/functions/get_default_link_to_edit
 * @method \WP_Post get_default_page_to_edit () https://developer.wordpress.org/reference/functions/get_default_page_to_edit
+* @method \WP_Post get_default_post_to_edit (string $post_type = 'post', bool $create_in_db = false) https://developer.wordpress.org/reference/functions/get_default_post_to_edit
 * @method string|void get_delete_post_link (int|\WP_Post $id = 0, string $deprecated = '', bool $force_delete = false) https://developer.wordpress.org/reference/functions/get_delete_post_link
 * @method int get_dirsize (string $directory) https://developer.wordpress.org/reference/functions/get_dirsize
 * @method array get_dropins () https://developer.wordpress.org/reference/functions/get_dropins
@@ -501,6 +522,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|null get_edit_term_link (int $term_id, string $taxonomy = '', string $object_type = '') https://developer.wordpress.org/reference/functions/get_edit_term_link
 * @method string get_edit_user_link (int $user_id = NULL) https://developer.wordpress.org/reference/functions/get_edit_user_link
 * @method void get_embed_template () https://developer.wordpress.org/reference/functions/get_embed_template
+* @method array get_enclosed (int $post_id) https://developer.wordpress.org/reference/functions/get_enclosed
+* @method array get_extended (string $post) https://developer.wordpress.org/reference/functions/get_extended
 * @method string get_feed_link (string $feed = '') https://developer.wordpress.org/reference/functions/get_feed_link
 * @method void get_file ($path) https://developer.wordpress.org/reference/functions/get_file
 * @method void get_filesystem_method ($args = [], $context = '', $allow_relaxed_file_ownership = false) https://developer.wordpress.org/reference/functions/get_filesystem_method
@@ -532,6 +555,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array get_intermediate_image_sizes () https://developer.wordpress.org/reference/functions/get_intermediate_image_sizes
 * @method void get_language_attributes (string $doctype = 'html') https://developer.wordpress.org/reference/functions/get_language_attributes
 * @method string|bool get_lastcommentmodified (string $timezone = 'server') https://developer.wordpress.org/reference/functions/get_lastcommentmodified
+* @method string get_lastpostdate (string $timezone = 'server', string $post_type = 'any') https://developer.wordpress.org/reference/functions/get_lastpostdate
+* @method string get_lastpostmodified (string $timezone = 'server', string $post_type = 'any') https://developer.wordpress.org/reference/functions/get_lastpostmodified
 * @method array get_last_updated (mixed $deprecated = '', int $start = 0, int $quantity = 40) https://developer.wordpress.org/reference/functions/get_last_updated
 * @method object|array get_link (int $bookmark_id, string $output = NULL, string $filter = 'raw') https://developer.wordpress.org/reference/functions/get_link
 * @method string get_linkcatname (int $id = 0) https://developer.wordpress.org/reference/functions/get_linkcatname
@@ -553,6 +578,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string get_media_items (int $post_id, array $errors) https://developer.wordpress.org/reference/functions/get_media_items
 * @method mixed get_metadata (string $meta_type, int $object_id, string $meta_key = '', bool $single = false) https://developer.wordpress.org/reference/functions/get_metadata
 * @method object|bool get_metadata_by_mid (string $meta_type, int $meta_id) https://developer.wordpress.org/reference/functions/get_metadata_by_mid
+* @method mixed get_meta_keys () https://developer.wordpress.org/reference/functions/get_meta_keys
 * @method array get_meta_sql (array $meta_query, string $type, string $primary_table, string $primary_id_column, object $context = NULL) https://developer.wordpress.org/reference/functions/get_meta_sql
 * @method string get_month_link (bool|int $year, bool|int $month) https://developer.wordpress.org/reference/functions/get_month_link
 * @method array get_most_active_blogs (int $num = 10, bool $display = true) https://developer.wordpress.org/reference/functions/get_most_active_blogs
@@ -580,13 +606,21 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array get_others_drafts (int $user_id) https://developer.wordpress.org/reference/functions/get_others_drafts
 * @method array get_others_pending (int $user_id) https://developer.wordpress.org/reference/functions/get_others_pending
 * @method array get_others_unpublished_posts (int $user_id, string $type = 'any') https://developer.wordpress.org/reference/functions/get_others_unpublished_posts
+* @method \WP_Post|array|null get_page (mixed $page, string $output = NULL, string $filter = 'raw') https://developer.wordpress.org/reference/functions/get_page
 * @method string get_paged_template () https://developer.wordpress.org/reference/functions/get_paged_template
 * @method string get_pagenum_link (int $pagenum = 1, bool $escape = true) https://developer.wordpress.org/reference/functions/get_pagenum_link
+* @method array|bool get_pages (array|string $args = []) https://developer.wordpress.org/reference/functions/get_pages
+* @method \WP_Post|array|null get_page_by_path (string $page_path, string $output = NULL, string|array $post_type = 'page') https://developer.wordpress.org/reference/functions/get_page_by_path
+* @method \WP_Post|array|null get_page_by_title (string $page_title, string $output = NULL, string|array $post_type = 'page') https://developer.wordpress.org/reference/functions/get_page_by_title
+* @method array get_page_children (int $page_id, array $pages) https://developer.wordpress.org/reference/functions/get_page_children
+* @method array get_page_hierarchy (array $pages, int $page_id = 0) https://developer.wordpress.org/reference/functions/get_page_hierarchy
 * @method string get_page_link (int|\WP_Post $post = false, bool $leavename = false, bool $sample = false) https://developer.wordpress.org/reference/functions/get_page_link
 * @method int|null get_page_of_comment (int $comment_ID, array $args = []) https://developer.wordpress.org/reference/functions/get_page_of_comment
+* @method array get_page_statuses () https://developer.wordpress.org/reference/functions/get_page_statuses
 * @method void get_page_template () https://developer.wordpress.org/reference/functions/get_page_template
 * @method array get_page_templates (\WP_Post|null $post = NULL, string $post_type = 'page') https://developer.wordpress.org/reference/functions/get_page_templates
 * @method string|bool get_page_template_slug (int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_page_template_slug
+* @method string|bool get_page_uri (\WP_Post|object|int $page = 0) https://developer.wordpress.org/reference/functions/get_page_uri
 * @method string get_parent_post_rel_link (string $title = '%title') https://developer.wordpress.org/reference/functions/get_parent_post_rel_link
 * @method string get_parent_theme_file_path (string $file = '') https://developer.wordpress.org/reference/functions/get_parent_theme_file_path
 * @method string get_parent_theme_file_uri (string $file = '') https://developer.wordpress.org/reference/functions/get_parent_theme_file_uri
@@ -599,12 +633,20 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|null get_plugin_page_hook (string $plugin_page, string $parent_page) https://developer.wordpress.org/reference/functions/get_plugin_page_hook
 * @method void get_plugin_page_hookname (string $plugin_page, string $parent_page) https://developer.wordpress.org/reference/functions/get_plugin_page_hookname
 * @method array get_plugin_updates () https://developer.wordpress.org/reference/functions/get_plugin_updates
+* @method \WP_Post|array|null get_post (int|\WP_Post|null $post = NULL, string $output = NULL, string $filter = 'raw') https://developer.wordpress.org/reference/functions/get_post
 * @method void get_postdata ($postid) https://developer.wordpress.org/reference/functions/get_postdata
+* @method array get_posts (array $args = NULL) https://developer.wordpress.org/reference/functions/get_posts
+* @method string get_posts_by_author_sql (array|string $post_type, bool $full = true, int $post_author = NULL, bool $public_only = false) https://developer.wordpress.org/reference/functions/get_posts_by_author_sql
 * @method string get_posts_nav_link (string|array $args = []) https://developer.wordpress.org/reference/functions/get_posts_nav_link
+* @method array get_post_ancestors (int|\WP_Post $post) https://developer.wordpress.org/reference/functions/get_post_ancestors
 * @method void get_post_class ($class = '', $post_id = NULL) https://developer.wordpress.org/reference/functions/get_post_class
 * @method string get_post_comments_feed_link (int $post_id = 0, string $feed = '') https://developer.wordpress.org/reference/functions/get_post_comments_feed_link
+* @method array get_post_custom (int $post_id = 0) https://developer.wordpress.org/reference/functions/get_post_custom
+* @method array|void get_post_custom_keys (int $post_id = 0) https://developer.wordpress.org/reference/functions/get_post_custom_keys
+* @method array|null get_post_custom_values (string $key = '', int $post_id = 0) https://developer.wordpress.org/reference/functions/get_post_custom_values
 * @method string|bool get_post_embed_html (int $width, int $height, int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_post_embed_html
 * @method string|bool get_post_embed_url (int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_post_embed_url
+* @method string get_post_field (string $field, int|\WP_Post $post = NULL, string $context = 'display') https://developer.wordpress.org/reference/functions/get_post_field
 * @method void get_post_format ($post = NULL) https://developer.wordpress.org/reference/functions/get_post_format
 * @method string|\WP_Error|bool get_post_format_link (string $format) https://developer.wordpress.org/reference/functions/get_post_format_link
 * @method array get_post_format_slugs () https://developer.wordpress.org/reference/functions/get_post_format_slugs
@@ -614,16 +656,30 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array get_post_galleries_images (int|\WP_Post $post = 0) https://developer.wordpress.org/reference/functions/get_post_galleries_images
 * @method string|array get_post_gallery (int|\WP_Post $post = 0, bool $html = true) https://developer.wordpress.org/reference/functions/get_post_gallery
 * @method array get_post_gallery_images (int|\WP_Post $post = 0) https://developer.wordpress.org/reference/functions/get_post_gallery_images
+* @method mixed get_post_meta (int $post_id, string $key = '', bool $single = false) https://developer.wordpress.org/reference/functions/get_post_meta
+* @method object|bool get_post_meta_by_id (int $mid) https://developer.wordpress.org/reference/functions/get_post_meta_by_id
+* @method string|bool get_post_mime_type (int|\WP_Post $ID = '') https://developer.wordpress.org/reference/functions/get_post_mime_type
+* @method array get_post_mime_types () https://developer.wordpress.org/reference/functions/get_post_mime_types
 * @method string|int|bool get_post_modified_time (string $d = 'U', bool $gmt = false, int|\WP_Post $post = NULL, bool $translate = false) https://developer.wordpress.org/reference/functions/get_post_modified_time
 * @method string|\WP_Error get_post_permalink (int|\WP_Post $id = 0, bool $leavename = false, bool $sample = false) https://developer.wordpress.org/reference/functions/get_post_permalink
 * @method bool|null|string get_post_reply_link (array $args = [], int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_post_reply_link
+* @method array get_post_stati (array|string $args = [], string $output = 'names', string $operator = 'and') https://developer.wordpress.org/reference/functions/get_post_stati
+* @method string|bool get_post_status (int|\WP_Post $ID = '') https://developer.wordpress.org/reference/functions/get_post_status
+* @method array get_post_statuses () https://developer.wordpress.org/reference/functions/get_post_statuses
+* @method object|null get_post_status_object (string $post_status) https://developer.wordpress.org/reference/functions/get_post_status_object
 * @method array get_post_taxonomies (int|\WP_Post $post = 0) https://developer.wordpress.org/reference/functions/get_post_taxonomies
 * @method string|int get_post_thumbnail_id (int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_post_thumbnail_id
 * @method string|int|bool get_post_time (string $d = 'U', bool $gmt = false, int|\WP_Post $post = NULL, bool $translate = false) https://developer.wordpress.org/reference/functions/get_post_time
 * @method object get_post_to_edit (int $id) https://developer.wordpress.org/reference/functions/get_post_to_edit
+* @method string|bool get_post_type (int|\WP_Post|null $post = NULL) https://developer.wordpress.org/reference/functions/get_post_type
+* @method array get_post_types (array|string $args = [], string $output = 'names', string $operator = 'and') https://developer.wordpress.org/reference/functions/get_post_types
+* @method array get_post_types_by_support (array|string $feature, string $operator = 'and') https://developer.wordpress.org/reference/functions/get_post_types_by_support
 * @method string|bool get_post_type_archive_feed_link (string $post_type, string $feed = '') https://developer.wordpress.org/reference/functions/get_post_type_archive_feed_link
 * @method string|bool get_post_type_archive_link (string $post_type) https://developer.wordpress.org/reference/functions/get_post_type_archive_link
 * @method void get_post_type_archive_template () https://developer.wordpress.org/reference/functions/get_post_type_archive_template
+* @method object get_post_type_capabilities (object $args) https://developer.wordpress.org/reference/functions/get_post_type_capabilities
+* @method void get_post_type_labels ($post_type_object) https://developer.wordpress.org/reference/functions/get_post_type_labels
+* @method \WP_Post_Type|null get_post_type_object (string $post_type) https://developer.wordpress.org/reference/functions/get_post_type_object
 * @method void get_preferred_from_update_core () https://developer.wordpress.org/reference/functions/get_preferred_from_update_core
 * @method string|null get_preview_post_link (int|\WP_Post $post = NULL, array $query_args = [], string $preview_link = '') https://developer.wordpress.org/reference/functions/get_preview_post_link
 * @method string|void get_previous_comments_link (string $label = '') https://developer.wordpress.org/reference/functions/get_previous_comments_link
@@ -632,7 +688,9 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|void get_previous_posts_page_link () https://developer.wordpress.org/reference/functions/get_previous_posts_page_link
 * @method string get_previous_post_link (string $format = '&laquo; %link', string $link = '%title', bool $in_same_term = false, array|string $excluded_terms = '', string $taxonomy = 'category') https://developer.wordpress.org/reference/functions/get_previous_post_link
 * @method string get_privacy_policy_url () https://developer.wordpress.org/reference/functions/get_privacy_policy_url
+* @method string get_private_posts_cap_sql (string|array $post_type) https://developer.wordpress.org/reference/functions/get_private_posts_cap_sql
 * @method string get_profile (string $field, bool|int $user = false) https://developer.wordpress.org/reference/functions/get_profile
+* @method array get_pung (int|\WP_Post $post_id) https://developer.wordpress.org/reference/functions/get_pung
 * @method object get_queried_object () https://developer.wordpress.org/reference/functions/get_queried_object
 * @method int get_queried_object_id () https://developer.wordpress.org/reference/functions/get_queried_object_id
 * @method void get_query_template ($type, $templates = []) https://developer.wordpress.org/reference/functions/get_query_template
@@ -647,6 +705,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string get_rest_url (int $blog_id = NULL, string $path = '/', string $scheme = 'rest') https://developer.wordpress.org/reference/functions/get_rest_url
 * @method \WP_Role|null get_role (string $role) https://developer.wordpress.org/reference/functions/get_role
 * @method bool get_rss (string $url, int $num_items = 5) https://developer.wordpress.org/reference/functions/get_rss
+* @method array get_sample_permalink (int $id, string $title = NULL, string $name = NULL) https://developer.wordpress.org/reference/functions/get_sample_permalink
+* @method string get_sample_permalink_html (int $id, string $new_title = NULL, string $new_slug = NULL) https://developer.wordpress.org/reference/functions/get_sample_permalink_html
 * @method string get_screen_icon () https://developer.wordpress.org/reference/functions/get_screen_icon
 * @method string get_search_comments_feed_link (string $search_query = '', string $feed = '') https://developer.wordpress.org/reference/functions/get_search_comments_feed_link
 * @method string get_search_feed_link (string $search_query = '', string $feed = '') https://developer.wordpress.org/reference/functions/get_search_feed_link
@@ -781,6 +841,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|int|bool get_the_time (string $d = '', int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/get_the_time
 * @method string get_the_title (int|\WP_Post $post = 0) https://developer.wordpress.org/reference/functions/get_the_title
 * @method string get_the_title_rss () https://developer.wordpress.org/reference/functions/get_the_title_rss
+* @method array get_to_ping (int|\WP_Post $post_id) https://developer.wordpress.org/reference/functions/get_to_ping
 * @method string get_trackback_url () https://developer.wordpress.org/reference/functions/get_trackback_url
 * @method mixed get_transient (string $transient) https://developer.wordpress.org/reference/functions/get_transient
 * @method \Translations|\NOOP_Translations get_translations_for_domain (string $domain) https://developer.wordpress.org/reference/functions/get_translations_for_domain
@@ -828,6 +889,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool has_header_image () https://developer.wordpress.org/reference/functions/has_header_image
 * @method bool has_header_video () https://developer.wordpress.org/reference/functions/has_header_video
 * @method bool has_image_size (string $name) https://developer.wordpress.org/reference/functions/has_image_size
+* @method mixed has_meta (int $postid) https://developer.wordpress.org/reference/functions/has_meta
 * @method bool has_nav_menu (string $location) https://developer.wordpress.org/reference/functions/has_nav_menu
 * @method bool has_post_format (string|array $format = [], object|int|null $post = NULL) https://developer.wordpress.org/reference/functions/has_post_format
 * @method void has_post_thumbnail ($post = NULL) https://developer.wordpress.org/reference/functions/has_post_thumbnail
@@ -928,6 +990,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool is_iterable (mixed $var) https://developer.wordpress.org/reference/functions/is_iterable
 * @method bool is_lighttpd_before_150 () https://developer.wordpress.org/reference/functions/is_lighttpd_before_150
 * @method bool is_locale_switched () https://developer.wordpress.org/reference/functions/is_locale_switched
+* @method bool is_local_attachment (string $url) https://developer.wordpress.org/reference/functions/is_local_attachment
 * @method void is_main_blog () https://developer.wordpress.org/reference/functions/is_main_blog
 * @method bool is_main_network (int $network_id = NULL) https://developer.wordpress.org/reference/functions/is_main_network
 * @method bool is_main_query () https://developer.wordpress.org/reference/functions/is_main_query
@@ -950,6 +1013,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool is_plugin_inactive (string $plugin) https://developer.wordpress.org/reference/functions/is_plugin_inactive
 * @method bool is_plugin_page () https://developer.wordpress.org/reference/functions/is_plugin_page
 * @method bool is_post_type_archive (string|array $post_types = '') https://developer.wordpress.org/reference/functions/is_post_type_archive
+* @method bool is_post_type_hierarchical (string $post_type) https://developer.wordpress.org/reference/functions/is_post_type_hierarchical
+* @method bool is_post_type_viewable (string|\WP_Post_Type $post_type) https://developer.wordpress.org/reference/functions/is_post_type_viewable
 * @method bool is_preview () https://developer.wordpress.org/reference/functions/is_preview
 * @method bool is_protected_meta (string $meta_key, string|null $meta_type = NULL) https://developer.wordpress.org/reference/functions/is_protected_meta
 * @method bool is_random_header_image (string $type = 'any') https://developer.wordpress.org/reference/functions/is_random_header_image
@@ -965,6 +1030,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool is_singular (string|array $post_types = '') https://developer.wordpress.org/reference/functions/is_singular
 * @method void is_site_admin (string $user_login = '') https://developer.wordpress.org/reference/functions/is_site_admin
 * @method bool is_ssl () https://developer.wordpress.org/reference/functions/is_ssl
+* @method bool is_sticky (int $post_id = 0) https://developer.wordpress.org/reference/functions/is_sticky
 * @method void is_subdomain_install () https://developer.wordpress.org/reference/functions/is_subdomain_install
 * @method void is_success ($sc) https://developer.wordpress.org/reference/functions/is_success
 * @method bool is_super_admin (int $user_id = false) https://developer.wordpress.org/reference/functions/is_super_admin
@@ -1162,6 +1228,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void populate_roles_280 () https://developer.wordpress.org/reference/functions/populate_roles_280
 * @method void populate_roles_300 () https://developer.wordpress.org/reference/functions/populate_roles_300
 * @method string popuplinks (string $text) https://developer.wordpress.org/reference/functions/popuplinks
+* @method string postbox_classes (string $id, string $page) https://developer.wordpress.org/reference/functions/postbox_classes
 * @method void posts_nav_link (string $sep = '', string $prelabel = '', string $nxtlabel = '') https://developer.wordpress.org/reference/functions/posts_nav_link
 * @method void post_author_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_author_meta_box
 * @method void post_categories_meta_box (\WP_Post $post, array $box) https://developer.wordpress.org/reference/functions/post_categories_meta_box
@@ -1173,10 +1240,12 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool|string|array post_custom (string $key = '') https://developer.wordpress.org/reference/functions/post_custom
 * @method void post_custom_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_custom_meta_box
 * @method void post_excerpt_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_excerpt_meta_box
+* @method int post_exists (string $title, string $content = '', string $date = '') https://developer.wordpress.org/reference/functions/post_exists
 * @method void post_format_meta_box (\WP_Post $post, array $box) https://developer.wordpress.org/reference/functions/post_format_meta_box
 * @method void post_form_autocomplete_off () https://developer.wordpress.org/reference/functions/post_form_autocomplete_off
 * @method bool post_password_required (int|\WP_Post|null $post = NULL) https://developer.wordpress.org/reference/functions/post_password_required
 * @method string|bool post_permalink (int|\WP_Post $post_id = 0) https://developer.wordpress.org/reference/functions/post_permalink
+* @method string post_preview () https://developer.wordpress.org/reference/functions/post_preview
 * @method string|bool|null post_reply_link (array $args = [], int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/post_reply_link
 * @method void post_revisions_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_revisions_meta_box
 * @method void post_slug_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_slug_meta_box
@@ -1185,6 +1254,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void post_thumbnail_meta_box (\WP_Post $post) https://developer.wordpress.org/reference/functions/post_thumbnail_meta_box
 * @method void post_trackback_meta_box (object $post) https://developer.wordpress.org/reference/functions/post_trackback_meta_box
 * @method string|void post_type_archive_title (string $prefix = '', bool $display = true) https://developer.wordpress.org/reference/functions/post_type_archive_title
+* @method bool post_type_exists (string $post_type) https://developer.wordpress.org/reference/functions/post_type_exists
+* @method bool post_type_supports (string $post_type, string $feature) https://developer.wordpress.org/reference/functions/post_type_supports
 * @method string prepend_attachment (string $content) https://developer.wordpress.org/reference/functions/prepend_attachment
 * @method array prep_atom_text_construct (string $data) https://developer.wordpress.org/reference/functions/prep_atom_text_construct
 * @method void preview_theme () https://developer.wordpress.org/reference/functions/preview_theme
@@ -1222,6 +1293,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method int|bool recurse_dirsize (string $directory, string $exclude = NULL) https://developer.wordpress.org/reference/functions/recurse_dirsize
 * @method void redirect_canonical ($requested_url = NULL, $do_redirect = true) https://developer.wordpress.org/reference/functions/redirect_canonical
 * @method bool|string redirect_guess_404_permalink () https://developer.wordpress.org/reference/functions/redirect_guess_404_permalink
+* @method void redirect_post (int $post_id = '') https://developer.wordpress.org/reference/functions/redirect_post
 * @method array redirect_this_site (array|string $deprecated = '') https://developer.wordpress.org/reference/functions/redirect_this_site
 * @method void refresh_blog_details (int $blog_id = 0) https://developer.wordpress.org/reference/functions/refresh_blog_details
 * @method bool|int refresh_user_details (int $id) https://developer.wordpress.org/reference/functions/refresh_user_details
@@ -1237,6 +1309,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void register_nav_menu (string $location, string $description) https://developer.wordpress.org/reference/functions/register_nav_menu
 * @method void register_nav_menus (array $locations = []) https://developer.wordpress.org/reference/functions/register_nav_menus
 * @method int|\WP_Error register_new_user (string $user_login, string $user_email) https://developer.wordpress.org/reference/functions/register_new_user
+* @method object register_post_status (string $post_status, array|string $args = []) https://developer.wordpress.org/reference/functions/register_post_status
+* @method void register_post_type ($post_type, $args = []) https://developer.wordpress.org/reference/functions/register_post_type
 * @method void register_rest_field (string|array $object_type, string $attribute, array $args = []) https://developer.wordpress.org/reference/functions/register_rest_field
 * @method bool register_rest_route (string $namespace, string $route, array $args = [], bool $override = false) https://developer.wordpress.org/reference/functions/register_rest_route
 * @method void register_setting (string $option_group, string $option_name, array $args = []) https://developer.wordpress.org/reference/functions/register_setting
@@ -1265,6 +1339,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void remove_option_update_handler (string $option_group, string $option_name, callable $sanitize_callback = '') https://developer.wordpress.org/reference/functions/remove_option_update_handler
 * @method array remove_option_whitelist (array $del_options, string|array $options = '') https://developer.wordpress.org/reference/functions/remove_option_whitelist
 * @method void remove_permastruct (string $name) https://developer.wordpress.org/reference/functions/remove_permastruct
+* @method void remove_post_type_support (string $post_type, string $feature) https://developer.wordpress.org/reference/functions/remove_post_type_support
 * @method string remove_query_arg (string|array $key, bool|string $query = false) https://developer.wordpress.org/reference/functions/remove_query_arg
 * @method void remove_rewrite_tag (string $tag) https://developer.wordpress.org/reference/functions/remove_rewrite_tag
 * @method void remove_role (string $role) https://developer.wordpress.org/reference/functions/remove_role
@@ -1339,6 +1414,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method mixed sanitize_meta (string $meta_key, mixed $meta_value, string $object_type) https://developer.wordpress.org/reference/functions/sanitize_meta
 * @method string sanitize_mime_type (string $mime_type) https://developer.wordpress.org/reference/functions/sanitize_mime_type
 * @method string sanitize_option (string $option, string $value) https://developer.wordpress.org/reference/functions/sanitize_option
+* @method object|\WP_Post|array sanitize_post (object|\WP_Post|array $post, string $context = 'display') https://developer.wordpress.org/reference/functions/sanitize_post
+* @method mixed sanitize_post_field (string $field, mixed $value, int $post_id, string $context = 'display') https://developer.wordpress.org/reference/functions/sanitize_post_field
 * @method string|bool sanitize_sql_orderby (string $orderby) https://developer.wordpress.org/reference/functions/sanitize_sql_orderby
 * @method array|object sanitize_term (array|object $term, string $taxonomy, string $context = 'display') https://developer.wordpress.org/reference/functions/sanitize_term
 * @method mixed sanitize_term_field (string $field, string $value, int $term_id, string $taxonomy, string $context) https://developer.wordpress.org/reference/functions/sanitize_term_field
@@ -1377,7 +1454,9 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void set_current_screen (mixed $hook_name = '') https://developer.wordpress.org/reference/functions/set_current_screen
 * @method \WP_User set_current_user (int|null $id, string $name = '') https://developer.wordpress.org/reference/functions/set_current_user
 * @method array|\WP_Error|bool set_post_format (int|object $post, string $format) https://developer.wordpress.org/reference/functions/set_post_format
+* @method int|bool set_post_thumbnail (int|\WP_Post $post, int $thumbnail_id) https://developer.wordpress.org/reference/functions/set_post_thumbnail
 * @method void set_post_thumbnail_size (int $width = 0, int $height = 0, bool|array $crop = false) https://developer.wordpress.org/reference/functions/set_post_thumbnail_size
+* @method int|bool set_post_type (int $post_id = 0, string $post_type = 'post') https://developer.wordpress.org/reference/functions/set_post_type
 * @method void set_query_var (string $var, mixed $value) https://developer.wordpress.org/reference/functions/set_query_var
 * @method void set_screen_options () https://developer.wordpress.org/reference/functions/set_screen_options
 * @method bool set_site_transient (string $transient, mixed $value, int $expiration = 0) https://developer.wordpress.org/reference/functions/set_site_transient
@@ -1420,6 +1499,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void start_wp () https://developer.wordpress.org/reference/functions/start_wp
 * @method void status_header (int $code, string $description = '') https://developer.wordpress.org/reference/functions/status_header
 * @method void sticky_class (int $post_id = NULL) https://developer.wordpress.org/reference/functions/sticky_class
+* @method void stick_post (int $post_id) https://developer.wordpress.org/reference/functions/stick_post
 * @method bool stream_preview_image (int $post_id) https://developer.wordpress.org/reference/functions/stream_preview_image
 * @method void stripos ($haystack, $needle) https://developer.wordpress.org/reference/functions/stripos
 * @method mixed stripslashes_deep (mixed $value) https://developer.wordpress.org/reference/functions/stripslashes_deep
@@ -1523,6 +1603,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void trackback_rdf (int $deprecated = '') https://developer.wordpress.org/reference/functions/trackback_rdf
 * @method void trackback_response (mixed $error = 0, string $error_message = '') https://developer.wordpress.org/reference/functions/trackback_response
 * @method void|string trackback_url (bool $deprecated_echo = true) https://developer.wordpress.org/reference/functions/trackback_url
+* @method void trackback_url_list (string $tb_list, int $post_id) https://developer.wordpress.org/reference/functions/trackback_url_list
 * @method string trailingslashit (string $string) https://developer.wordpress.org/reference/functions/trailingslashit
 * @method string translate (string $text, string $domain = 'default') https://developer.wordpress.org/reference/functions/translate
 * @method string translate_level_to_role (int $level) https://developer.wordpress.org/reference/functions/translate_level_to_role
@@ -1543,6 +1624,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool|void unregister_default_headers (string|array $header) https://developer.wordpress.org/reference/functions/unregister_default_headers
 * @method bool unregister_meta_key (string $object_type, string $meta_key) https://developer.wordpress.org/reference/functions/unregister_meta_key
 * @method bool unregister_nav_menu (string $location) https://developer.wordpress.org/reference/functions/unregister_nav_menu
+* @method bool|\WP_Error unregister_post_type (string $post_type) https://developer.wordpress.org/reference/functions/unregister_post_type
 * @method void unregister_setting (string $option_group, string $option_name, callable $deprecated = '') https://developer.wordpress.org/reference/functions/unregister_setting
 * @method void unregister_sidebar (string|int $sidebar_id) https://developer.wordpress.org/reference/functions/unregister_sidebar
 * @method void unregister_sidebar_widget (int|string $id) https://developer.wordpress.org/reference/functions/unregister_sidebar_widget
@@ -1550,9 +1632,11 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool unregister_taxonomy_for_object_type (string $taxonomy, string $object_type) https://developer.wordpress.org/reference/functions/unregister_taxonomy_for_object_type
 * @method void unregister_widget ($widget) https://developer.wordpress.org/reference/functions/unregister_widget
 * @method void unregister_widget_control (int|string $id) https://developer.wordpress.org/reference/functions/unregister_widget_control
+* @method void unstick_post (int $post_id) https://developer.wordpress.org/reference/functions/unstick_post
 * @method string untrailingslashit (string $string) https://developer.wordpress.org/reference/functions/untrailingslashit
 * @method mixed unzip_file (string $file, string $to) https://developer.wordpress.org/reference/functions/unzip_file
 * @method string update_archived (int $id, string $archived) https://developer.wordpress.org/reference/functions/update_archived
+* @method bool update_attached_file (int $attachment_id, string $file) https://developer.wordpress.org/reference/functions/update_attached_file
 * @method bool update_blog_details (int $blog_id, array $details = []) https://developer.wordpress.org/reference/functions/update_blog_details
 * @method bool update_blog_option (int $id, string $option, mixed $value, mixed $deprecated = NULL) https://developer.wordpress.org/reference/functions/update_blog_option
 * @method void update_blog_public (int $old_value, int $value) https://developer.wordpress.org/reference/functions/update_blog_public
@@ -1563,6 +1647,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method \WP_Error|null update_core (string $from, string $to) https://developer.wordpress.org/reference/functions/update_core
 * @method array update_gallery_tab (array $tabs) https://developer.wordpress.org/reference/functions/update_gallery_tab
 * @method void update_home_siteurl (string $old_value, string $value) https://developer.wordpress.org/reference/functions/update_home_siteurl
+* @method bool update_meta (int $meta_id, string $meta_key, string $meta_value) https://developer.wordpress.org/reference/functions/update_meta
 * @method int|bool update_metadata (string $meta_type, int $object_id, string $meta_key, mixed $meta_value, mixed $prev_value = '') https://developer.wordpress.org/reference/functions/update_metadata
 * @method bool update_metadata_by_mid (string $meta_type, int $meta_id, string $meta_value, string $meta_key = false) https://developer.wordpress.org/reference/functions/update_metadata_by_mid
 * @method array|bool update_meta_cache (string $meta_type, int|array $object_ids) https://developer.wordpress.org/reference/functions/update_meta_cache
@@ -1574,7 +1659,11 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool update_option (string $option, mixed $value, string|bool $autoload = NULL) https://developer.wordpress.org/reference/functions/update_option
 * @method void update_option_new_admin_email (string $old_value, string $value) https://developer.wordpress.org/reference/functions/update_option_new_admin_email
 * @method void update_page_cache (array $pages) https://developer.wordpress.org/reference/functions/update_page_cache
+* @method array|bool update_postmeta_cache (array $post_ids) https://developer.wordpress.org/reference/functions/update_postmeta_cache
 * @method void update_posts_count (string $deprecated = '') https://developer.wordpress.org/reference/functions/update_posts_count
+* @method void update_post_cache (array $posts) https://developer.wordpress.org/reference/functions/update_post_cache
+* @method void update_post_caches (array $posts, string $post_type = 'post', bool $update_term_cache = true, bool $update_meta_cache = true) https://developer.wordpress.org/reference/functions/update_post_caches
+* @method int|bool update_post_meta (int $post_id, string $meta_key, mixed $meta_value, mixed $prev_value = '') https://developer.wordpress.org/reference/functions/update_post_meta
 * @method void update_post_thumbnail_cache (\WP_Query $wp_query = NULL) https://developer.wordpress.org/reference/functions/update_post_thumbnail_cache
 * @method void update_recently_edited (string $file) https://developer.wordpress.org/reference/functions/update_recently_edited
 * @method void update_right_now_message () https://developer.wordpress.org/reference/functions/update_right_now_message
@@ -1706,7 +1795,10 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool wp_add_inline_script (string $handle, string $data, string $position = 'after') https://developer.wordpress.org/reference/functions/wp_add_inline_script
 * @method bool wp_add_inline_style (string $handle, string $data) https://developer.wordpress.org/reference/functions/wp_add_inline_style
 * @method array|\WP_Error wp_add_object_terms (int $object_id, string|int|array $terms, array|string $taxonomy) https://developer.wordpress.org/reference/functions/wp_add_object_terms
+* @method array|bool|\WP_Error wp_add_post_tags (int $post_id = 0, string|array $tags = '') https://developer.wordpress.org/reference/functions/wp_add_post_tags
 * @method void wp_add_privacy_policy_content (string $plugin_name, string $policy_text) https://developer.wordpress.org/reference/functions/wp_add_privacy_policy_content
+* @method string wp_add_trashed_suffix_to_post_name_for_post (\WP_Post $post) https://developer.wordpress.org/reference/functions/wp_add_trashed_suffix_to_post_name_for_post
+* @method void wp_add_trashed_suffix_to_post_name_for_trashed_posts (string $post_name, string $post_ID = 0) https://developer.wordpress.org/reference/functions/wp_add_trashed_suffix_to_post_name_for_trashed_posts
 * @method void wp_admin_bar_add_secondary_groups (\WP_Admin_Bar $wp_admin_bar) https://developer.wordpress.org/reference/functions/wp_admin_bar_add_secondary_groups
 * @method void wp_admin_bar_appearance_menu (\WP_Admin_Bar $wp_admin_bar) https://developer.wordpress.org/reference/functions/wp_admin_bar_appearance_menu
 * @method void wp_admin_bar_comments_menu (\WP_Admin_Bar $wp_admin_bar) https://developer.wordpress.org/reference/functions/wp_admin_bar_comments_menu
@@ -1818,6 +1910,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array wp_allowed_protocols () https://developer.wordpress.org/reference/functions/wp_allowed_protocols
 * @method int|string|\WP_Error wp_allow_comment (array $commentdata, bool $avoid_die = false) https://developer.wordpress.org/reference/functions/wp_allow_comment
 * @method array wp_array_slice_assoc (array $array, array $keys) https://developer.wordpress.org/reference/functions/wp_array_slice_assoc
+* @method bool wp_attachment_is (string $type, int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/wp_attachment_is
+* @method bool wp_attachment_is_image (int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/wp_attachment_is_image
 * @method string|void wp_audio_shortcode (array $attr, string $content = '') https://developer.wordpress.org/reference/functions/wp_audio_shortcode
 * @method \WP_User|\WP_Error wp_authenticate (string $username, string $password) https://developer.wordpress.org/reference/functions/wp_authenticate
 * @method \WP_User|\WP_Error wp_authenticate_cookie (\WP_User|\WP_Error|null $user, string $username, string $password) https://developer.wordpress.org/reference/functions/wp_authenticate_cookie
@@ -1827,6 +1921,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array wp_auth_check (array $response) https://developer.wordpress.org/reference/functions/wp_auth_check
 * @method void wp_auth_check_html () https://developer.wordpress.org/reference/functions/wp_auth_check_html
 * @method void wp_auth_check_load () https://developer.wordpress.org/reference/functions/wp_auth_check_load
+* @method mixed wp_autosave (array $post_data) https://developer.wordpress.org/reference/functions/wp_autosave
 * @method string wp_basename (string $path, string $suffix = '') https://developer.wordpress.org/reference/functions/wp_basename
 * @method bool wp_blacklist_check (string $author, string $email, string $url, string $comment, string $user_ip, string $user_agent) https://developer.wordpress.org/reference/functions/wp_blacklist_check
 * @method void wp_cache_add ($key, $data, $group = '', $expire = 0) https://developer.wordpress.org/reference/functions/wp_cache_add
@@ -1855,12 +1950,16 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool wp_check_comment_flood (bool $is_flood, string $ip, string $email, string $date, bool $avoid_die = false) https://developer.wordpress.org/reference/functions/wp_check_comment_flood
 * @method array wp_check_filetype (string $filename, array $mimes = NULL) https://developer.wordpress.org/reference/functions/wp_check_filetype
 * @method array wp_check_filetype_and_ext (string $file, string $filename, array $mimes = NULL) https://developer.wordpress.org/reference/functions/wp_check_filetype_and_ext
+* @method void wp_check_for_changed_dates (int $post_id, \WP_Post $post, \WP_Post $post_before) https://developer.wordpress.org/reference/functions/wp_check_for_changed_dates
+* @method void wp_check_for_changed_slugs (int $post_id, \WP_Post $post, \WP_Post $post_before) https://developer.wordpress.org/reference/functions/wp_check_for_changed_slugs
 * @method string wp_check_invalid_utf8 (string $string, bool $strip = false) https://developer.wordpress.org/reference/functions/wp_check_invalid_utf8
 * @method bool wp_check_jsonp_callback (string $callback) https://developer.wordpress.org/reference/functions/wp_check_jsonp_callback
 * @method array wp_check_locked_posts (array $response, array $data, string $screen_id) https://developer.wordpress.org/reference/functions/wp_check_locked_posts
 * @method void wp_check_mysql_version () https://developer.wordpress.org/reference/functions/wp_check_mysql_version
 * @method bool wp_check_password (string $password, string $hash, string|int $user_id = '') https://developer.wordpress.org/reference/functions/wp_check_password
 * @method void wp_check_php_mysql_versions () https://developer.wordpress.org/reference/functions/wp_check_php_mysql_versions
+* @method void wp_check_post_hierarchy_for_loops ($post_parent, $post_ID) https://developer.wordpress.org/reference/functions/wp_check_post_hierarchy_for_loops
+* @method int|bool wp_check_post_lock (int $post_id) https://developer.wordpress.org/reference/functions/wp_check_post_lock
 * @method void wp_check_term_hierarchy_for_loops ($parent, $term_id, $taxonomy) https://developer.wordpress.org/reference/functions/wp_check_term_hierarchy_for_loops
 * @method void wp_clean_plugins_cache (bool $clear_update_cache = true) https://developer.wordpress.org/reference/functions/wp_clean_plugins_cache
 * @method void wp_clean_themes_cache (bool $clear_update_cache = true) https://developer.wordpress.org/reference/functions/wp_clean_themes_cache
@@ -1880,12 +1979,15 @@ namespace Org_Heigl\WordPressWrapper;
 * @method int wp_convert_hr_to_bytes (string $value) https://developer.wordpress.org/reference/functions/wp_convert_hr_to_bytes
 * @method array wp_convert_widget_settings (string $base_name, string $option_name, array $settings) https://developer.wordpress.org/reference/functions/wp_convert_widget_settings
 * @method void wp_cookie_constants () https://developer.wordpress.org/reference/functions/wp_cookie_constants
+* @method object wp_count_attachments (string|array $mime_type = '') https://developer.wordpress.org/reference/functions/wp_count_attachments
 * @method object|array wp_count_comments (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_count_comments
+* @method object wp_count_posts (string $type = 'post', string $perm = '') https://developer.wordpress.org/reference/functions/wp_count_posts
 * @method array|int|\WP_Error wp_count_terms (string $taxonomy, array|string $args = []) https://developer.wordpress.org/reference/functions/wp_count_terms
 * @method array wp_create_categories (array $categories, int $post_id = '') https://developer.wordpress.org/reference/functions/wp_create_categories
 * @method int|\WP_Error wp_create_category (int|string $cat_name, int $parent = 0) https://developer.wordpress.org/reference/functions/wp_create_category
 * @method int|\WP_Error wp_create_nav_menu (string $menu_name) https://developer.wordpress.org/reference/functions/wp_create_nav_menu
 * @method string wp_create_nonce (string|int $action = -1) https://developer.wordpress.org/reference/functions/wp_create_nonce
+* @method mixed wp_create_post_autosave (mixed $post_data) https://developer.wordpress.org/reference/functions/wp_create_post_autosave
 * @method array|\WP_Error wp_create_tag (int|string $tag_name) https://developer.wordpress.org/reference/functions/wp_create_tag
 * @method array|\WP_Error wp_create_term (int|string $tag_name, string $taxonomy = 'post_tag') https://developer.wordpress.org/reference/functions/wp_create_term
 * @method string wp_create_thumbnail (mixed $file, int $max_side, mixed $deprecated = '') https://developer.wordpress.org/reference/functions/wp_create_thumbnail
@@ -1933,12 +2035,15 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_default_styles (\WP_Styles $styles) https://developer.wordpress.org/reference/functions/wp_default_styles
 * @method bool wp_defer_comment_counting (bool $defer = NULL) https://developer.wordpress.org/reference/functions/wp_defer_comment_counting
 * @method bool wp_defer_term_counting (bool $defer = NULL) https://developer.wordpress.org/reference/functions/wp_defer_term_counting
+* @method \WP_Post|bool|null wp_delete_attachment (int $post_id, bool $force_delete = false) https://developer.wordpress.org/reference/functions/wp_delete_attachment
+* @method void wp_delete_auto_drafts () https://developer.wordpress.org/reference/functions/wp_delete_auto_drafts
 * @method bool|int|\WP_Error wp_delete_category (int $cat_ID) https://developer.wordpress.org/reference/functions/wp_delete_category
 * @method bool wp_delete_comment (int|\WP_Comment $comment_id, bool $force_delete = false) https://developer.wordpress.org/reference/functions/wp_delete_comment
 * @method void wp_delete_file (string $file) https://developer.wordpress.org/reference/functions/wp_delete_file
 * @method bool wp_delete_link (int $link_id) https://developer.wordpress.org/reference/functions/wp_delete_link
 * @method bool|\WP_Error wp_delete_nav_menu (int|string|\WP_Term $menu) https://developer.wordpress.org/reference/functions/wp_delete_nav_menu
 * @method void wp_delete_object_term_relationships (int $object_id, string|array $taxonomies) https://developer.wordpress.org/reference/functions/wp_delete_object_term_relationships
+* @method \WP_Post|bool|null wp_delete_post (int $postid = 0, bool $force_delete = false) https://developer.wordpress.org/reference/functions/wp_delete_post
 * @method array|bool|\WP_Post|\WP_Error|null wp_delete_post_revision (int|\WP_Post $revision_id) https://developer.wordpress.org/reference/functions/wp_delete_post_revision
 * @method bool|int|\WP_Error wp_delete_term (int $term, string $taxonomy, array|string $args = []) https://developer.wordpress.org/reference/functions/wp_delete_term
 * @method void wp_delete_user ($id, $reassign = NULL) https://developer.wordpress.org/reference/functions/wp_delete_user
@@ -1962,6 +2067,9 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_dropdown_roles (string $selected = '') https://developer.wordpress.org/reference/functions/wp_dropdown_roles
 * @method string wp_dropdown_users (array|string $args = '') https://developer.wordpress.org/reference/functions/wp_dropdown_users
 * @method void wp_editor (string $content, string $editor_id, array $settings = []) https://developer.wordpress.org/reference/functions/wp_editor
+* @method array wp_edit_attachments_query (array|bool $q = false) https://developer.wordpress.org/reference/functions/wp_edit_attachments_query
+* @method array wp_edit_attachments_query_vars (array|bool $q = false) https://developer.wordpress.org/reference/functions/wp_edit_attachments_query_vars
+* @method array wp_edit_posts_query (array|bool $q = false) https://developer.wordpress.org/reference/functions/wp_edit_posts_query
 * @method bool|\WP_Error wp_edit_theme_plugin_file (array $args) https://developer.wordpress.org/reference/functions/wp_edit_theme_plugin_file
 * @method void wp_embed_defaults ($url = '') https://developer.wordpress.org/reference/functions/wp_embed_defaults
 * @method string wp_embed_excerpt_attachment (string $content) https://developer.wordpress.org/reference/functions/wp_embed_excerpt_attachment
@@ -2013,6 +2121,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array wp_get_all_sessions () https://developer.wordpress.org/reference/functions/wp_get_all_sessions
 * @method string|void wp_get_archives (string|array $args = '') https://developer.wordpress.org/reference/functions/wp_get_archives
 * @method array wp_get_associated_nav_menu_items (int $object_id = 0, string $object_type = 'post_type', string $taxonomy = '') https://developer.wordpress.org/reference/functions/wp_get_associated_nav_menu_items
+* @method string|bool wp_get_attachment_caption (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_get_attachment_caption
 * @method array wp_get_attachment_id3_keys (\WP_Post $attachment, string $context = 'display') https://developer.wordpress.org/reference/functions/wp_get_attachment_id3_keys
 * @method string wp_get_attachment_image (int $attachment_id, string|array $size = 'thumbnail', bool $icon = false, string|array $attr = '') https://developer.wordpress.org/reference/functions/wp_get_attachment_image
 * @method string|bool wp_get_attachment_image_sizes (int $attachment_id, array|string $size = 'medium', array $image_meta = NULL) https://developer.wordpress.org/reference/functions/wp_get_attachment_image_sizes
@@ -2020,6 +2129,10 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|bool wp_get_attachment_image_srcset (int $attachment_id, array|string $size = 'medium', array $image_meta = NULL) https://developer.wordpress.org/reference/functions/wp_get_attachment_image_srcset
 * @method string|bool wp_get_attachment_image_url (int $attachment_id, string|array $size = 'thumbnail', bool $icon = false) https://developer.wordpress.org/reference/functions/wp_get_attachment_image_url
 * @method string wp_get_attachment_link (int|\WP_Post $id = 0, string|array $size = 'thumbnail', bool $permalink = false, bool $icon = false, string|bool $text = false, array|string $attr = '') https://developer.wordpress.org/reference/functions/wp_get_attachment_link
+* @method mixed wp_get_attachment_metadata (int $attachment_id = 0, bool $unfiltered = false) https://developer.wordpress.org/reference/functions/wp_get_attachment_metadata
+* @method string|bool wp_get_attachment_thumb_file (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_get_attachment_thumb_file
+* @method string|bool wp_get_attachment_thumb_url (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_get_attachment_thumb_url
+* @method string|bool wp_get_attachment_url (int $attachment_id = 0) https://developer.wordpress.org/reference/functions/wp_get_attachment_url
 * @method array wp_get_audio_extensions () https://developer.wordpress.org/reference/functions/wp_get_audio_extensions
 * @method array wp_get_available_translations () https://developer.wordpress.org/reference/functions/wp_get_available_translations
 * @method string|bool wp_get_canonical_url (int|\WP_Post $post = NULL) https://developer.wordpress.org/reference/functions/wp_get_canonical_url
@@ -2058,10 +2171,15 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array wp_get_pomo_file_data (string $po_file) https://developer.wordpress.org/reference/functions/wp_get_pomo_file_data
 * @method array wp_get_popular_importers () https://developer.wordpress.org/reference/functions/wp_get_popular_importers
 * @method \WP_Post|bool wp_get_post_autosave (int $post_id, int $user_id = 0) https://developer.wordpress.org/reference/functions/wp_get_post_autosave
+* @method array|\WP_Error wp_get_post_categories (int $post_id = 0, array $args = []) https://developer.wordpress.org/reference/functions/wp_get_post_categories
 * @method array wp_get_post_cats (int $blogid = '1', int $post_ID = 0) https://developer.wordpress.org/reference/functions/wp_get_post_cats
+* @method int|bool wp_get_post_parent_id (int $post_ID) https://developer.wordpress.org/reference/functions/wp_get_post_parent_id
 * @method \WP_Post|array|null wp_get_post_revision (int|\WP_Post $post, string $output = NULL, string $filter = 'raw') https://developer.wordpress.org/reference/functions/wp_get_post_revision
 * @method array wp_get_post_revisions (int|\WP_Post $post_id = 0, array|null $args = NULL) https://developer.wordpress.org/reference/functions/wp_get_post_revisions
+* @method array|\WP_Error wp_get_post_tags (int $post_id = 0, array $args = []) https://developer.wordpress.org/reference/functions/wp_get_post_tags
+* @method array|\WP_Error wp_get_post_terms (int $post_id = 0, string|array $taxonomy = 'post_tag', array $args = []) https://developer.wordpress.org/reference/functions/wp_get_post_terms
 * @method string|bool wp_get_raw_referer () https://developer.wordpress.org/reference/functions/wp_get_raw_referer
+* @method array|bool wp_get_recent_posts (array $args = [], string $output = NULL) https://developer.wordpress.org/reference/functions/wp_get_recent_posts
 * @method bool|string wp_get_referer () https://developer.wordpress.org/reference/functions/wp_get_referer
 * @method void wp_get_revision_ui_diff ($post, $compare_from, $compare_to) https://developer.wordpress.org/reference/functions/wp_get_revision_ui_diff
 * @method string|bool wp_get_schedule (string $hook, array $args = []) https://developer.wordpress.org/reference/functions/wp_get_schedule
@@ -2112,9 +2230,11 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_import_upload_form (string $action) https://developer.wordpress.org/reference/functions/wp_import_upload_form
 * @method void wp_initial_constants () https://developer.wordpress.org/reference/functions/wp_initial_constants
 * @method void wp_initial_nav_menu_meta_boxes () https://developer.wordpress.org/reference/functions/wp_initial_nav_menu_meta_boxes
+* @method int|\WP_Error wp_insert_attachment (string|array $args, string $file = false, int $parent = 0, bool $wp_error = false) https://developer.wordpress.org/reference/functions/wp_insert_attachment
 * @method int|object wp_insert_category (array $catarr, bool $wp_error = false) https://developer.wordpress.org/reference/functions/wp_insert_category
 * @method int|bool wp_insert_comment (array $commentdata) https://developer.wordpress.org/reference/functions/wp_insert_comment
 * @method int|\WP_Error wp_insert_link (array $linkdata, bool $wp_error = false) https://developer.wordpress.org/reference/functions/wp_insert_link
+* @method int|\WP_Error wp_insert_post (array $postarr, bool $wp_error = false) https://developer.wordpress.org/reference/functions/wp_insert_post
 * @method array|\WP_Error wp_insert_term (string $term, string $taxonomy, array|string $args = []) https://developer.wordpress.org/reference/functions/wp_insert_term
 * @method int|\WP_Error wp_insert_user (array|object|\WP_User $userdata) https://developer.wordpress.org/reference/functions/wp_insert_user
 * @method array wp_install (string $blog_title, string $user_name, string $user_email, bool $public, string $deprecated = '', string $user_password = '', string $language = '') https://developer.wordpress.org/reference/functions/wp_install
@@ -2205,6 +2325,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method array wp_make_theme_file_tree (array $allowed_files) https://developer.wordpress.org/reference/functions/wp_make_theme_file_tree
 * @method array wp_map_nav_menu_locations (array $new_nav_menu_locations, array $old_nav_menu_locations) https://developer.wordpress.org/reference/functions/wp_map_nav_menu_locations
 * @method array wp_map_sidebars_widgets (array $existing_sidebars_widgets) https://developer.wordpress.org/reference/functions/wp_map_sidebars_widgets
+* @method array wp_match_mime_types (string|array $wildcard_mime_types, string|array $real_mime_types) https://developer.wordpress.org/reference/functions/wp_match_mime_types
 * @method int wp_max_upload_size () https://developer.wordpress.org/reference/functions/wp_max_upload_size
 * @method void wp_maybe_auto_update () https://developer.wordpress.org/reference/functions/wp_maybe_auto_update
 * @method string wp_maybe_decline_date (string $date) https://developer.wordpress.org/reference/functions/wp_maybe_decline_date
@@ -2221,6 +2342,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method null|string wp_media_upload_handler () https://developer.wordpress.org/reference/functions/wp_media_upload_handler
 * @method void wp_meta () https://developer.wordpress.org/reference/functions/wp_meta
 * @method \WP_Metadata_Lazyloader wp_metadata_lazyloader () https://developer.wordpress.org/reference/functions/wp_metadata_lazyloader
+* @method string|bool wp_mime_type_icon (string|int $mime = 0) https://developer.wordpress.org/reference/functions/wp_mime_type_icon
 * @method bool wp_mkdir_p (string $target) https://developer.wordpress.org/reference/functions/wp_mkdir_p
 * @method string|bool|void wp_nav_menu (array $args = []) https://developer.wordpress.org/reference/functions/wp_nav_menu
 * @method string wp_nav_menu_disabled_check (int|string $nav_menu_selected_id) https://developer.wordpress.org/reference/functions/wp_nav_menu_disabled_check
@@ -2277,6 +2399,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_plugin_update_rows () https://developer.wordpress.org/reference/functions/wp_plugin_update_rows
 * @method void wp_plupload_default_settings () https://developer.wordpress.org/reference/functions/wp_plupload_default_settings
 * @method array wp_popular_terms_checklist (string $taxonomy, int $default = 0, int $number = 10, bool $echo = true) https://developer.wordpress.org/reference/functions/wp_popular_terms_checklist
+* @method string wp_post_mime_type_where (string|array $post_mime_types, string $table_alias = '') https://developer.wordpress.org/reference/functions/wp_post_mime_type_where
 * @method void wp_post_preview_js () https://developer.wordpress.org/reference/functions/wp_post_preview_js
 * @method string|bool wp_post_revision_title (int|object $revision, bool $link = true) https://developer.wordpress.org/reference/functions/wp_post_revision_title
 * @method string|bool wp_post_revision_title_expanded (int|object $revision, bool $link = true) https://developer.wordpress.org/reference/functions/wp_post_revision_title_expanded
@@ -2313,7 +2436,9 @@ namespace Org_Heigl\WordPressWrapper;
 * @method bool|\WP_Error wp_privacy_send_personal_data_export_email (int $request_id) https://developer.wordpress.org/reference/functions/wp_privacy_send_personal_data_export_email
 * @method void wp_protect_special_option (string $option) https://developer.wordpress.org/reference/functions/wp_protect_special_option
 * @method array wp_prototype_before_jquery (array $js_array) https://developer.wordpress.org/reference/functions/wp_prototype_before_jquery
+* @method void wp_publish_post (int|\WP_Post $post) https://developer.wordpress.org/reference/functions/wp_publish_post
 * @method void wp_queue_comments_for_comment_meta_lazyload (array $comments) https://developer.wordpress.org/reference/functions/wp_queue_comments_for_comment_meta_lazyload
+* @method void wp_queue_posts_for_term_meta_lazyload (array $posts) https://developer.wordpress.org/reference/functions/wp_queue_posts_for_term_meta_lazyload
 * @method void wp_quicktags () https://developer.wordpress.org/reference/functions/wp_quicktags
 * @method void wp_raise_memory_limit ($context = 'admin') https://developer.wordpress.org/reference/functions/wp_raise_memory_limit
 * @method int wp_rand (int $min = 0, int $max = 0) https://developer.wordpress.org/reference/functions/wp_rand
@@ -2405,7 +2530,11 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_set_link_cats (int $link_id = 0, array $link_categories = []) https://developer.wordpress.org/reference/functions/wp_set_link_cats
 * @method array|\WP_Error wp_set_object_terms (int $object_id, string|int|array $terms, string $taxonomy, bool $append = false) https://developer.wordpress.org/reference/functions/wp_set_object_terms
 * @method void wp_set_password (string $password, int $user_id) https://developer.wordpress.org/reference/functions/wp_set_password
+* @method array|bool|\WP_Error wp_set_post_categories (int $post_ID = 0, array|int $post_categories = [], bool $append = false) https://developer.wordpress.org/reference/functions/wp_set_post_categories
 * @method bool|mixed wp_set_post_cats (int $blogid = '1', int $post_ID = 0, array $post_categories = []) https://developer.wordpress.org/reference/functions/wp_set_post_cats
+* @method array|bool wp_set_post_lock (int $post_id) https://developer.wordpress.org/reference/functions/wp_set_post_lock
+* @method array|bool|\WP_Error wp_set_post_tags (int $post_id = 0, string|array $tags = '', bool $append = false) https://developer.wordpress.org/reference/functions/wp_set_post_tags
+* @method array|bool|\WP_Error wp_set_post_terms (int $post_id = 0, string|array $tags = '', string $taxonomy = 'post_tag', bool $append = false) https://developer.wordpress.org/reference/functions/wp_set_post_terms
 * @method void wp_set_sidebars_widgets (array $sidebars_widgets) https://developer.wordpress.org/reference/functions/wp_set_sidebars_widgets
 * @method void wp_set_wpdb_vars () https://developer.wordpress.org/reference/functions/wp_set_wpdb_vars
 * @method void wp_shake_js () https://developer.wordpress.org/reference/functions/wp_shake_js
@@ -2456,13 +2585,17 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|null wp_title (string $sep = '&raquo;', bool $display = true, string $seplocation = '') https://developer.wordpress.org/reference/functions/wp_title
 * @method void wp_title_rss (string $deprecated = '&#8211;') https://developer.wordpress.org/reference/functions/wp_title_rss
 * @method void wp_transition_comment_status ($new_status, $old_status, $comment) https://developer.wordpress.org/reference/functions/wp_transition_comment_status
+* @method void wp_transition_post_status ($new_status, $old_status, $post) https://developer.wordpress.org/reference/functions/wp_transition_post_status
 * @method bool wp_trash_comment (int|\WP_Comment $comment_id) https://developer.wordpress.org/reference/functions/wp_trash_comment
+* @method \WP_Post|bool|null wp_trash_post (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_trash_post
+* @method mixed|void wp_trash_post_comments (int|\WP_Post|null $post = NULL) https://developer.wordpress.org/reference/functions/wp_trash_post_comments
 * @method void wp_trim_excerpt ($text = '') https://developer.wordpress.org/reference/functions/wp_trim_excerpt
 * @method string wp_trim_words (string $text, int $num_words = 55, string $more = NULL) https://developer.wordpress.org/reference/functions/wp_trim_words
 * @method void wp_underscore_audio_template () https://developer.wordpress.org/reference/functions/wp_underscore_audio_template
 * @method void wp_underscore_playlist_templates () https://developer.wordpress.org/reference/functions/wp_underscore_playlist_templates
 * @method void wp_underscore_video_template () https://developer.wordpress.org/reference/functions/wp_underscore_video_template
 * @method string wp_unique_filename (string $dir, string $filename, callable $unique_filename_callback = NULL) https://developer.wordpress.org/reference/functions/wp_unique_filename
+* @method string wp_unique_post_slug (string $slug, int $post_ID, string $post_status, string $post_type, int $post_parent) https://developer.wordpress.org/reference/functions/wp_unique_post_slug
 * @method string wp_unique_term_slug (string $slug, object $term) https://developer.wordpress.org/reference/functions/wp_unique_term_slug
 * @method void wp_unregister_GLOBALS () https://developer.wordpress.org/reference/functions/wp_unregister_GLOBALS
 * @method void wp_unregister_sidebar_widget (int|string $id) https://developer.wordpress.org/reference/functions/wp_unregister_sidebar_widget
@@ -2472,6 +2605,9 @@ namespace Org_Heigl\WordPressWrapper;
 * @method string|array wp_unslash (string|array $value) https://developer.wordpress.org/reference/functions/wp_unslash
 * @method bool wp_unspam_comment (int|\WP_Comment $comment_id) https://developer.wordpress.org/reference/functions/wp_unspam_comment
 * @method bool wp_untrash_comment (int|\WP_Comment $comment_id) https://developer.wordpress.org/reference/functions/wp_untrash_comment
+* @method \WP_Post|bool|null wp_untrash_post (int $post_id = 0) https://developer.wordpress.org/reference/functions/wp_untrash_post
+* @method bool|void wp_untrash_post_comments (int|\WP_Post|null $post = NULL) https://developer.wordpress.org/reference/functions/wp_untrash_post_comments
+* @method int|bool wp_update_attachment_metadata (int $attachment_id, array $data) https://developer.wordpress.org/reference/functions/wp_update_attachment_metadata
 * @method int|bool wp_update_category (array $catarr) https://developer.wordpress.org/reference/functions/wp_update_category
 * @method int wp_update_comment (array $commentarr) https://developer.wordpress.org/reference/functions/wp_update_comment
 * @method bool|void wp_update_comment_count (int|null $post_id, bool $do_deferred = false) https://developer.wordpress.org/reference/functions/wp_update_comment_count
@@ -2486,6 +2622,7 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_update_network_user_counts (int|null $network_id = NULL) https://developer.wordpress.org/reference/functions/wp_update_network_user_counts
 * @method void wp_update_plugin ($plugin, $feedback = '') https://developer.wordpress.org/reference/functions/wp_update_plugin
 * @method void wp_update_plugins (array $extra_stats = []) https://developer.wordpress.org/reference/functions/wp_update_plugins
+* @method int|\WP_Error wp_update_post (array|object $postarr = [], bool $wp_error = false) https://developer.wordpress.org/reference/functions/wp_update_post
 * @method array|\WP_Error wp_update_term (int $term_id, string $taxonomy, array|string $args = []) https://developer.wordpress.org/reference/functions/wp_update_term
 * @method bool wp_update_term_count (int|array $terms, string $taxonomy, bool $do_deferred = false) https://developer.wordpress.org/reference/functions/wp_update_term_count
 * @method bool wp_update_term_count_now (array $terms, string $taxonomy) https://developer.wordpress.org/reference/functions/wp_update_term_count_now
@@ -2516,6 +2653,8 @@ namespace Org_Heigl\WordPressWrapper;
 * @method void wp_widget_rss_form (array|string $args, array $inputs = NULL) https://developer.wordpress.org/reference/functions/wp_widget_rss_form
 * @method void wp_widget_rss_output (string|array|object $rss, array $args = []) https://developer.wordpress.org/reference/functions/wp_widget_rss_output
 * @method array wp_widget_rss_process (array $widget_rss, bool $check_feed = true) https://developer.wordpress.org/reference/functions/wp_widget_rss_process
+* @method int|\WP_Error wp_write_post () https://developer.wordpress.org/reference/functions/wp_write_post
+* @method int|null write_post () https://developer.wordpress.org/reference/functions/write_post
 * @method void wxr_authors_list (array $post_ids = NULL) https://developer.wordpress.org/reference/functions/wxr_authors_list
 * @method void wxr_category_description (object $category) https://developer.wordpress.org/reference/functions/wxr_category_description
 * @method void wxr_cat_name (object $category) https://developer.wordpress.org/reference/functions/wxr_cat_name

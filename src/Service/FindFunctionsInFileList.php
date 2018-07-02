@@ -27,9 +27,6 @@ class FindFunctionsInFileList
         $classReflector = $configuration->classReflector();
 
         foreach ($fileList as $file) {
-            if ($file->getFileName() === 'post.php') {
-                continue;
-            }
             $locator   = new SingleFileSourceLocator(
                 $file->getRealPath(),
                 $astLocator
