@@ -24,14 +24,30 @@ class CreateWrapperFile
         $this->filePath = $filePath;
     }
 
-    public function __invoke(Functions $functionList) : SplFileInfo
+    public function __invoke(Functions $functionList, string $version) : SplFileInfo
     {
         $functionList->sort();
 
-        $handle = fopen($this->filePath, 'w');
-        fwrite($handle, '<?php' . "\n\n");
-        fwrite($handle, "/**\n * Autocreated via wordpress-Wrapper\n */\n\nnamespace Org_Heigl\\WordPressWrapper;\n\n");
-        fwrite($handle, "/**\n");
+        $header = <<<EOF
+<?php
+
+/*
+ * Autocreated via wordpress-Wrapper
+ *
+ * Created for WordPress Version %s
+ *
+ * This File needs add least PHP 5.6 due to the '...'-token!
+ *
+ * See https://heiglandreas.github.io/wordpressWrapper/ for more information
+ */
+
+namespace Org_Heigl\WordPressWrapper;
+
+/**
+
+EOF;
+        $handle = fopen(sprintf($this->filePath, $version), 'w');
+        fwrite($handle, sprintf($header, $version));
 
         /** @var \Roave\BetterReflection\Reflection\ReflectionFunction $function */
         foreach ($functionList as $function) {

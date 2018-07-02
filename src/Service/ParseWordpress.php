@@ -23,18 +23,22 @@ class ParseWordpress
 
     private $wrapper;
 
+    private $versionFinder;
+
     public function __construct(
         DownloadWordPressVersion $downloader,
         ExtractZipFileToFolder $extractor,
         FindPhpFilesInExtractedCode $finder,
         FindFunctionsInFileList $functionFinder,
-        CreateWrapperFile $wrapper
+        CreateWrapperFile $wrapper,
+        GetWordpressVersion $versionFinder
     ) {
         $this->downloader     = $downloader;
         $this->extractor      = $extractor;
         $this->finder         = $finder;
         $this->functionFinder = $functionFinder;
         $this->wrapper        = $wrapper;
+        $this->versionFinder  = $versionFinder;
     }
 
     public function parse(string $version, OutputInterface $output) : SplFileInfo
@@ -49,6 +53,6 @@ class ParseWordpress
         $functionList      = ($this->functionFinder)($fileList);
 
         $output->writeln(sprintf('creating wrapper class for %s functions', $functionList->count()));
-        return ($this->wrapper)($functionList);
+        return ($this->wrapper)($functionList, ($this->versionFinder)($fileList));
     }
 }

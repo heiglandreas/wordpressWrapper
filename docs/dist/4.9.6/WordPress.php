@@ -1,7 +1,13 @@
 <?php
 
-/**
+/*
  * Autocreated via wordpress-Wrapper
+ *
+ * Created for WordPress Version 4.9.6
+ *
+ * This File needs add least PHP 5.6 due to the '...'-token!
+ *
+ * See https://heiglandreas.github.io/wordpressWrapper/ for more information
  */
 
 namespace Org_Heigl\WordPressWrapper;

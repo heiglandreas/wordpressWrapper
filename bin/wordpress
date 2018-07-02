@@ -17,6 +17,7 @@ use Org_Heigl\WordpressWrapper\Service\DownloadWordPressVersion;
 use Org_Heigl\WordpressWrapper\Service\ExtractZipFileToFolder;
 use Org_Heigl\WordpressWrapper\Service\FindFunctionsInFileList;
 use Org_Heigl\WordpressWrapper\Service\FindPhpFilesInExtractedCode;
+use Org_Heigl\WordpressWrapper\Service\GetWordpressVersion;
 use Org_Heigl\WordpressWrapper\Service\ParseWordpress;
 use Symfony\Component\Console\Application;
 
@@ -27,7 +28,8 @@ $application->add(new ParseWordpressCore(new ParseWordpress(
         new ExtractZipFileToFolder(),
         new FindPhpFilesInExtractedCode(new FileFinder()),
         new FindFunctionsInFileList(),
-        new CreateWrapperFile(getcwd() . DIRECTORY_SEPARATOR . 'WordPress.php')
+        new CreateWrapperFile(getcwd() . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . '%s' . DIRECTORY_SEPARATOR . 'WordPress.php'),
+        new GetWordpressVersion()
 )));
 $application->setDefaultCommand('parse', true);
 
