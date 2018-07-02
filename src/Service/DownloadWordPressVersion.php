@@ -20,7 +20,12 @@ class DownloadWordPressVersion
             $hash          = sha1(random_bytes(40));
             $this->zipfile = sys_get_temp_dir() . '/' . $hash . '.zip';
         }
-        copy('https://wordpress.org/latest.zip', $this->zipfile);
+
+        if ('latest' !== $version) {
+            $version = 'wordpress-' . $version;
+        }
+
+        copy(sprintf('https://wordpress.org/%s.zip', $version), $this->zipfile);
 
         return new SplFileInfo($this->zipfile);
     }

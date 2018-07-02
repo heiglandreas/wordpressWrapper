@@ -16,7 +16,8 @@ your project.
 
 ## Download
 
-[WordPress-4.9.6](dist/4.9.6/WordPress.php)
+* [WordPress-4.9.6](dist/4.9.6/WordPress.php)
+* [WordPress-4.9.5](dist/4.9.5/WordPress.php)
 
 ## Usage
 

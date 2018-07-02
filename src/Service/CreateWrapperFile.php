@@ -46,7 +46,12 @@ namespace Org_Heigl\WordPressWrapper;
 /**
 
 EOF;
-        $handle = fopen(sprintf($this->filePath, $version), 'w');
+        $file = sprintf($this->filePath, $version);
+        echo $file;
+        if (! is_dir(dirname($file))) {
+            mkdir(dirname($file), 0777, true);
+        }
+        $handle = fopen($file, 'w');
         fwrite($handle, sprintf($header, $version));
 
         /** @var \Roave\BetterReflection\Reflection\ReflectionFunction $function */
